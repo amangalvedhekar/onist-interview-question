@@ -8,10 +8,18 @@
  * Controller of the onistInterviewQuestionApp
  */
 angular.module('onistInterviewQuestionApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($ngRedux) {
+    var $ctrl = this;
+
+      function mapStateToCtrl(state) {
+        console.log('state', state);
+        return {
+          childrenQuestion: state.childrenQuestion.childrenQuestion.question
+        };
+      }
+
+      $ngRedux.connect(
+        mapStateToCtrl
+      )($ctrl);
+
   });

@@ -19,7 +19,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -80,4 +79,52 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* onist related styling based on zeplin presentation.
+ * good practice to add all the styling that goes to entire document to body
+ */
+body {
+  /*fall back to more genric font if a custom font happens to be missing*/
+  font-family: ProximaNova, sans-serif;
+}
+
+
+.title-step {
+  width: 64px;
+  height: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: left;
+  color: #616161;
+}
+
+.text-question {
+  width: 163px;
+  height: 17px;
+  font-size: 14px;
+  color: #616161;
+}
+.text-label-radio-button {
+  width: 20px;
+  height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #616161;
+}
+
+.left-spacing {
+  margin-left: 1em;
+}
+
+.right-spacing {
+  margin-right: 1em;
+}
+
+.top-spacing {
+  margin-top: 1em;
+}
+
+.top-padding {
+  padding-top: 1em;
 }
