@@ -5,7 +5,9 @@
 
     <input type="radio"
            id="yes"
-           value="yes"
+           data-ng-value="true"
+           data-ng-model="$ctrl.userSelection.displayChildPanel"
+           data-ng-click="$ctrl.checkboxClicked($ctrl.userSelection.displayChildPanel)"
            name="childSelect"/>
 
     <label for="yes"
@@ -15,7 +17,9 @@
 
     <input type="radio"
            id="no"
-           value="no"
+           data-ng-value="false"
+           data-ng-model="$ctrl.userSelection.displayChildPanel"
+           data-ng-click="$ctrl.checkboxClicked($ctrl.userSelection.displayChildPanel)"
            name="childSelect"/>
 
     <label for="no"

@@ -125,6 +125,20 @@ body {
   margin-top: 1em;
 }
 
+.bottom-spacing {
+  margin-bottom:1em;
+}
 .top-padding {
   padding-top: 1em;
+}
+.left-padding {
+  padding-left: 4em;
+}
+
+.right-padding {
+  padding-right: 4em;
+}
+
+label {
+  font-weight: normal;
 }

@@ -1,5 +1,10 @@
 <div>
-  <question-prompt question="{{ $ctrl.question }}">
+  <!--updateDisplayChildInformation-->
+  <question-prompt
+    question="{{ $ctrl.question }}"
+    update-display-child-information="$ctrl.updateDisplayChildInformation(selectedValue)">
   </question-prompt>
-  <child-information></child-information>
+  <child-information
+    display-child-Information="$ctrl.displayChildInformation">
+  </child-information>
 </div>

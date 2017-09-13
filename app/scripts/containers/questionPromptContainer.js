@@ -8,6 +8,10 @@ function questionPromptContainerController(
 
   var $ctrl = this;
 
+  $ctrl.updateStoreForChildInformation = function (userSelectedValue) {
+    console.log('value from check box', userSelectedValue);
+  };
+
   $ctrl.$onInit = function () {
 
     function mapStateToCtrl(state) {

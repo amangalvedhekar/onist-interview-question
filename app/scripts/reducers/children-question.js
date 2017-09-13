@@ -10,9 +10,17 @@ function childrenQuestionReducerProvider() {
     displayChildInformation: false
   };
 
-  var childrenQuestionReducerProvider = function (state, action) {
+  var childQuestionReducerProvider = function (state, action) {
     state = angular.copy(state || initialState);
     switch (action.type) {
+      case 'updateUserValue':
+        return angular.extend(
+          {},
+          state,
+          {
+            displayChildInformation: action.displayChildInformation
+          }
+        );
       default:
         return initialState;
     }
@@ -20,7 +28,7 @@ function childrenQuestionReducerProvider() {
 
   return {
     $get: function () {
-      return childrenQuestionReducerProvider;
+      return childQuestionReducerProvider;
     }
   };
 }

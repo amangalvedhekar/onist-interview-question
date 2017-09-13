@@ -5,14 +5,13 @@
 
 function childInformationController() {
   var $ctrl = this;
-
 }
 
 var childInformationComponent = {
   templateUrl: 'views/child-information.tpl.html',
   controller: 'childInformationController',
   bindings: {
-    question: '@'
+    displayChildInformation: '<'
   }
 };
 
