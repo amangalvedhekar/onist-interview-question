@@ -1,7 +1,7 @@
 <div class="well well-lg no-margin no-border">
   <form novalidate
         autocomplete="off"
-        data-ng-submit="$ctrl.addChildInformation($ctrl.childInformation)">
+        data-ng-submit="$ctrl.addChildInformation()">
     <p class="text-danger"
        data-ng-if="$ctrl.displayErrorMessage">
       Please enter both first and last name
@@ -23,14 +23,14 @@
         <input type="text"
                class="form-control"
                placeholder="jane"
-               data-ng-model="$ctrl.childInformation.firstName"
+               data-ng-model="$ctrl.childFirstName"
                data-ng-required="true"/>
       </div>
       <div class="col-sm-4">
         <input type="text"
                class="form-control"
                placeholder="doe"
-               data-ng-model="$ctrl.childInformation.lastName"
+               data-ng-model="$ctrl.childLastName"
                data-ng-required="true"/>
       </div>
     </div>
