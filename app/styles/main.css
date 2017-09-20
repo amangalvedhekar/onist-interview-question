@@ -5,10 +5,6 @@
   padding: 0.2em 0;
 }
 
-body {
-  padding: 0;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -84,9 +80,9 @@ body {
 /* onist related styling based on zeplin presentation.
  * good practice to add all the styling that goes to entire document to body
  */
-body {
-  /*fall back to more genric font if a custom font happens to be missing*/
-  font-family: ProximaNova, sans-serif;
+* {
+  /*fall back to more generic font if a custom font happens to be missing*/
+  font-family: ProximaNova;
 }
 
 
@@ -141,4 +137,42 @@ body {
 
 label {
   font-weight: normal;
+}
+
+a {
+  color: #357088;
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+a:hover, a:focus, a:visited, a:active {
+  color: #357099;
+  cursor: pointer;
+  text-decoration: none;
+}
+.module-title {
+  width: 72px;
+  height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #616161;
+}
+
+.section-title {
+  width: 67px;
+  height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #616161;
+}
+.no-margin {
+  margin: 0;
+}
+.no-border {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
 }

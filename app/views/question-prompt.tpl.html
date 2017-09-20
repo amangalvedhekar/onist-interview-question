@@ -1,6 +1,12 @@
 <div>
- <p class="title-step">Children</p>
-  <span class="text-question">{{ $ctrl.question }}</span>
+ <p class="title-step"
+    data-ng-if="$ctrl.childrenInformation.length === 1">
+   Children
+ </p>
+ <span class="text-question">
+   {{ $ctrl.question }}
+ </span>
+
   <span class="left-spacing">
 
     <input type="radio"

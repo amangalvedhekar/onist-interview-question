@@ -5,19 +5,14 @@
 function questionPromptContainerController(
   $ngRedux
 ) {
-
   var $ctrl = this;
-
-  $ctrl.updateStoreForChildInformation = function (userSelectedValue) {
-    console.log('value from check box', userSelectedValue);
-  };
-
   $ctrl.$onInit = function () {
-
     function mapStateToCtrl(state) {
       return {
         question: state.childrenQuestion.childrenQuestion.question,
-        displayChildInformation: state.childrenQuestion.childrenQuestion.displayChildInformation
+        displayChildInformation: state.childrenQuestion.childrenQuestion.displayChildInformation,
+        childrenInformation: state.childrenQuestion.childrenQuestion.data,
+        actualData: state.childrenQuestion.childrenQuestion.actualData
       };
     }
 
@@ -25,7 +20,6 @@ function questionPromptContainerController(
       mapStateToCtrl
     )($ctrl);
   };
-
 }
 
 var questionPromptContainerComponent = {

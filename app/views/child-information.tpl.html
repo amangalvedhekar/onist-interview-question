@@ -1,33 +1,52 @@
-<div data-ng-if="$ctrl.displayChildInformation"
-     class="well well-lg top-padding top-spacing">
-  <p class="text-uppercase">
-    Child
-  </p>
+<div class="well well-lg no-margin no-border">
+  <form novalidate
+        autocomplete="off"
+        data-ng-submit="$ctrl.addChildInformation($ctrl.childInformation)">
+    <p class="text-danger"
+       data-ng-if="$ctrl.displayErrorMessage">
+      Please enter both first and last name
+    </p>
+    <div class="row">
+      <child-side-panel
+        children-information="$ctrl.childrenInformation"
+        children-number="$ctrl.childrenNumber">
+      </child-side-panel>
+      <div class="col-sm-4">
+        <label>First Name<sup>*</sup></label>
+      </div>
+      <div class="col-sm-4">
+        <label>Last Name<sup>*</sup></label>
+      </div>
+    </div>
+    <div class="row bottom-spacing">
+      <div class="col-sm-4 col-sm-offset-4">
+        <input type="text"
+               class="form-control"
+               placeholder="jane"
+               data-ng-model="$ctrl.childInformation.firstName"
+               data-ng-required="true"/>
+      </div>
+      <div class="col-sm-4">
+        <input type="text"
+               class="form-control"
+               placeholder="doe"
+               data-ng-model="$ctrl.childInformation.lastName"
+               data-ng-required="true"/>
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit"
+              data-ng-if="$ctrl.isSubmitEnabled"
+              class="btn btn-primary btn-sm pull-right left-padding right-padding">
+        Save
+      </button>
+      <button type="reset"
+              data-ng-if="$ctrl.isResetEnabled"
+              class="btn btn-default btn-sm pull-right right-spacing left-padding right-padding"
+              data-ng-click="">
+        Cancel
+      </button>
+    </div>
+  </form>
 
-  <div class="row bottom-spacing">
-    <div class="col-sm-6">
-      <label>First Name<sup>*</sup></label>
-    </div>
-    <div class="col-sm-6">
-      <label>Last Name<sup>*</sup></label>
-    </div>
-  </div>
-  <div class="row bottom-spacing">
-    <div class="col-sm-6">
-      <input type="text" class="form-control"/>
-    </div>
-    <div class="col-sm-6">
-      <input type="text" class="form-control"/>
-    </div>
-  </div>
-  <div class="row">
-    <button type="submit"
-            class="btn btn-primary btn-sm pull-right left-padding right-padding">
-      Save
-    </button>
-    <button type="reset"
-            class="btn btn-default btn-sm pull-right right-spacing left-padding right-padding">
-      Cancel
-    </button>
-  </div>
 </div>

@@ -1,10 +1,22 @@
-<div>
-  <!--updateDisplayChildInformation-->
+<question-prompt
+  children-information="$ctrl.childrenInformation"
+  question="$ctrl.question"
+  update-display-child-information="$ctrl.updateDisplayChildInformation(selectedValue)">
+</question-prompt>
+<div data-ng-repeat="child in $ctrl.childrenInformation track by $index">
+  <child-information
+    data-ng-if="child.displayChildPanel"
+    child-first-name="child.firstName"
+    child-last-name="child.lastName"
+    display-child-information="$ctrl.displayChildInformation"
+    children-number="child.id"
+    children-information="$ctrl.childrenInformation">
+  </child-information>
   <question-prompt
-    question="{{ $ctrl.question }}"
+    data-ng-if="child.displayNextQuestion && $last"
+    children-number="child.id"
+    children-information="$ctrl.childrenInformation"
+    question="$ctrl.question"
     update-display-child-information="$ctrl.updateDisplayChildInformation(selectedValue)">
   </question-prompt>
-  <child-information
-    display-child-Information="$ctrl.displayChildInformation">
-  </child-information>
 </div>

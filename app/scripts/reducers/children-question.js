@@ -6,8 +6,23 @@
 function childrenQuestionReducerProvider() {
   var initialState = {
     question: 'Do you have any children?',
-    data: [],
-    displayChildInformation: false
+    data: [
+      {
+        id: 0,
+        firstName: '',
+        lastName: '',
+        displayNextQuestion: false,
+        displaySidePanel: false,
+        displayChildPanel: false
+      }
+      ],
+    actualData: [
+      {
+        firstName: '',
+        lastName: '',
+        displayNextQuestion: false
+      }
+    ]
   };
 
   var childQuestionReducerProvider = function (state, action) {
@@ -19,6 +34,24 @@ function childrenQuestionReducerProvider() {
           state,
           {
             displayChildInformation: action.displayChildInformation
+          }
+        );
+
+      case 'saveChildInformation':
+        return angular.extend(
+          {},
+          state,
+          {
+            data: action.data
+          }
+        );
+
+      case 'clearChildInformation':
+        return angular.extend(
+          {},
+          state,
+          {
+            data: action.data
           }
         );
       default:

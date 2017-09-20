@@ -8,27 +8,33 @@ function questionPromptController(
 ) {
   var $ctrl = this;
   $ctrl.userSelection = {};
-  //bind click event of checkbox to trigger callback to container so that store is updated
-
-  $ctrl.checkboxClicked = function (userSelectedValue) {
-    $ngRedux.dispatch(
-      updateStoreForChildInformation(userSelectedValue)
-    );
-  };
-
   function updateStoreForChildInformation(userSelectedValue) {
+    var childrenLength = $ctrl.childrenInformation.length;
+    $ctrl.childrenInformation[childrenLength -1].displayChildPanel = userSelectedValue;
+    $ctrl.childrenInformation[childrenLength -1].displayNextQuestion = false;
     return {
       type: 'updateUserValue',
-      displayChildInformation: userSelectedValue
+      data: $ctrl.childrenInformation
     };
   }
+
+  //bind click event of checkbox to trigger callback to container so that store is updated
+  $ctrl.checkboxClicked = function (userSelectedValue) {
+    $ngRedux.dispatch(
+      updateStoreForChildInformation(
+        userSelectedValue
+      )
+    );
+  };
 }
 
 var questionPromptComponent = {
   templateUrl: 'views/question-prompt.tpl.html',
   controller: 'questionPromptController',
   bindings: {
-    question: '@',
+    childrenInformation: '<',
+    question: '<',
+    childrenNumber: '<',
     //callback to container to dispatch action to update stores
     updateDisplayChildInformation: '&'
   }
