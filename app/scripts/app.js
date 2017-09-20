@@ -14,22 +14,43 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
+    'ui.bootstrap',
+    'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'sharedRedux',
+    'ngRedux'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
+  .config(function ($stateProvider) {
+    $stateProvider
+      .state('home', {
+        name:'home',
+        url: '',
+        template: '<question-prompt-container></question-prompt-container>'
       });
+
+  })
+  .config(function ($ngReduxProvider, reduxUtilsProvider, childrenQuestionRootReducerProvider) {
+
+    var reduxUtils = reduxUtilsProvider.$get();
+    var ReduxThunk = reduxUtils.ReduxThunk;
+    var Redux = reduxUtils.Redux;
+
+    var rootReducer = Redux.combineReducers({
+      childrenQuestion: childrenQuestionRootReducerProvider.$get()
+    });
+
+    var loggerOptions = {
+      level: 'info',
+      collapsed: false
+    };
+
+    var reduxLogger = reduxUtils.Redux.createLogger(loggerOptions);
+
+    var middlewares = [ReduxThunk, reduxLogger];
+
+    $ngReduxProvider.createStoreWith(
+      rootReducer,
+      middlewares
+    );
   });

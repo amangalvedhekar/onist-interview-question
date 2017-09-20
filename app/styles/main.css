@@ -5,10 +5,6 @@
   padding: 0.2em 0;
 }
 
-body {
-  padding: 0;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -19,7 +15,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -80,4 +75,104 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* onist related styling based on zeplin presentation.
+ * good practice to add all the styling that goes to entire document to body
+ */
+* {
+  /*fall back to more generic font if a custom font happens to be missing*/
+  font-family: ProximaNova;
+}
+
+
+.title-step {
+  width: 64px;
+  height: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: left;
+  color: #616161;
+}
+
+.text-question {
+  width: 163px;
+  height: 17px;
+  font-size: 14px;
+  color: #616161;
+}
+.text-label-radio-button {
+  width: 20px;
+  height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #616161;
+}
+
+.left-spacing {
+  margin-left: 1em;
+}
+
+.right-spacing {
+  margin-right: 1em;
+}
+
+.top-spacing {
+  margin-top: 1em;
+}
+
+.bottom-spacing {
+  margin-bottom:1em;
+}
+.top-padding {
+  padding-top: 1em;
+}
+.left-padding {
+  padding-left: 4em;
+}
+
+.right-padding {
+  padding-right: 4em;
+}
+
+label {
+  font-weight: normal;
+}
+
+a {
+  color: #357088;
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+a:hover, a:focus, a:visited, a:active {
+  color: #357099;
+  cursor: pointer;
+  text-decoration: none;
+}
+.module-title {
+  width: 72px;
+  height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #616161;
+}
+
+.section-title {
+  width: 67px;
+  height: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #616161;
+}
+.no-margin {
+  margin: 0;
+}
+.no-border {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
 }

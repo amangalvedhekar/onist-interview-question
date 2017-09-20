@@ -1,0 +1,37 @@
+<div>
+ <p class="title-step"
+    data-ng-if="$ctrl.childrenInformation.length === 1">
+   Children
+ </p>
+ <span class="text-question">
+   {{ $ctrl.question }}
+ </span>
+
+  <span class="left-spacing">
+
+    <input type="radio"
+           id="yes"
+           data-ng-value="true"
+           data-ng-model="$ctrl.userSelection.displayChildPanel"
+           data-ng-click="$ctrl.checkboxClicked($ctrl.userSelection.displayChildPanel)"
+           name="childSelect"/>
+
+    <label for="yes"
+           class="text-label-radio-button right-spacing">
+      Yes
+    </label>
+
+    <input type="radio"
+           id="no"
+           data-ng-value="false"
+           data-ng-model="$ctrl.userSelection.displayChildPanel"
+           data-ng-click="$ctrl.checkboxClicked($ctrl.userSelection.displayChildPanel)"
+           name="childSelect"/>
+
+    <label for="no"
+           class="text-label-radio-button">
+      No
+    </label>
+
+  </span>
+</div>
