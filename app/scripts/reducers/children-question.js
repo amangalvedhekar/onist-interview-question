@@ -11,6 +11,7 @@ function childrenQuestionReducerProvider() {
         id: 0,
         firstName: '',
         lastName: '',
+        childNameInputDisabled: false,
         displayNextQuestion: false,
         displaySidePanel: false,
         displayChildPanel: false

@@ -176,3 +176,8 @@ a:hover, a:focus, a:visited, a:active {
   border-radius: 0;
   -webkit-box-shadow: none;
 }
+.well-lg-inactive {
+  background: #ffffff;
+}
+
+

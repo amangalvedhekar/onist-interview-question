@@ -19,6 +19,7 @@ function childSidePanelController(
   };
 
   function removedChildStoreUpdate() {
+    //ToDo: this wont work if an element is inserted in between
     $ctrl.childrenInformation.splice($ctrl.childrenNumber-1, 1);
     return {
       type: 'clearChildInformation',
