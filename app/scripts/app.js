@@ -31,7 +31,7 @@ angular
 
   })
   .config(function ($ngReduxProvider, reduxUtilsProvider, childrenQuestionRootReducerProvider) {
-
+    //ToDO: set environment bindings to avoid logger in prod env as such
     var reduxUtils = reduxUtilsProvider.$get();
     var ReduxThunk = reduxUtils.ReduxThunk;
     var Redux = reduxUtils.Redux;
