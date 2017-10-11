@@ -16,14 +16,7 @@ function childrenQuestionReducerProvider() {
         displaySidePanel: false,
         displayChildPanel: false
       }
-      ],
-    actualData: [
-      {
-        firstName: '',
-        lastName: '',
-        displayNextQuestion: false
-      }
-    ]
+      ]
   };
 
   var childQuestionReducerProvider = function (state, action) {

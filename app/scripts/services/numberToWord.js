@@ -10,12 +10,13 @@
 function numberToWord() {
 
   function numberToOrdinal(number) {
-    const child = ' child';
+    var child = ' child';
     if (number === 0) {
       return '';
     }
     var digits = [];
-    var ordinals = ['tenth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eight', 'ninth'];
+    var ordinals = ['tenth', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth',
+                    'seventh', 'eight', 'ninth'];
     var units = [
       '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
       'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen',
@@ -27,6 +28,12 @@ function numberToWord() {
       number = parseInt(number / 10);
     }
     digits = digits.reverse();
+    if(digits.length > 2){
+      throw {
+        name: 'Error',
+        message: 'No more kids than 99'
+      };
+    }
     if (digits.length === 1) {
       return ordinals[digits[0]] + child;
     } else {
@@ -41,4 +48,6 @@ function numberToWord() {
 
 }
 
-angular.module('onistInterviewQuestionApp').service('numberToWord', numberToWord);
+angular
+  .module('onistInterviewQuestionApp')
+  .service('numberToWord', numberToWord);

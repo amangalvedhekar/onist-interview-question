@@ -9,8 +9,6 @@ function childSidePanelController(
 ) {
   var $ctrl = this;
   $ctrl.$onChanges = function (change) {
-    console.log($ctrl.child.id, change.child.currentValue.id);
-
     $ctrl.childNumberInWords = change.child.currentValue.id ?
                                numberToWord.numberToOrdinal(change.child.currentValue.id): '';
     function mapStateToCtrl(state) {
