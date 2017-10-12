@@ -7,17 +7,16 @@ function childInformationController(
   $ngRedux
 ) {
   var $ctrl = this;
-  console.log('ctrl', $ctrl);
-  $ctrl.childInformation = {};
+  var childInformation = {};
   function updateChildInformation(childInformation) {
     return {
       type: 'saveChildInformation',
       data: childInformation
     };
   }
-  $ctrl.addChildInformation = function (childInformation) {
+  $ctrl.addChildInformation = function () {
     var childrenIndex = $ctrl.childrenInformation.length;
-    if(childInformation && childInformation.firstName && childInformation.lastName) {
+    if($ctrl.childFirstName && $ctrl.childLastName) {
       $ctrl.displayErrorMessage = false;
       $ctrl.isSubmitEnabled = false;
       $ctrl.isResetEnabled = false;
@@ -26,8 +25,11 @@ function childInformationController(
         childInformation,
         {
           id: childrenIndex,
+          firstName: $ctrl.childFirstName,
+          lastName: $ctrl.childLastName,
           displayNextQuestion: true,
-          displayChildPanel: true
+          displayChildPanel: true,
+          childNameInputDisabled: true
         }
       );
 
@@ -49,8 +51,6 @@ function childInformationController(
     }
   };
 
-
-
   $ctrl.$onInit = function () {
     $ctrl.displayErrorMessage = false;
     $ctrl.isSubmitEnabled = true;
@@ -62,10 +62,10 @@ var childInformationComponent = {
   templateUrl: 'views/child-information.tpl.html',
   controller: 'childInformationController',
   bindings: {
+    child: '<',
     childFirstName: '<',
     childLastName: '<',
     displayChildInformation: '<',
-    childrenNumber: '<',
     childrenInformation: '<'
   }
 };

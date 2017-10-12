@@ -1,4 +1,5 @@
-<div class="well well-lg no-margin no-border">
+<div class="well well-lg no-margin no-border"
+     data-ng-class="($ctrl.isSubmitEnabled)? 'well-lg': 'well-lg-inactive'">
   <form novalidate
         autocomplete="off"
         data-ng-submit="$ctrl.addChildInformation()">
@@ -8,8 +9,8 @@
     </p>
     <div class="row">
       <child-side-panel
-        children-information="$ctrl.childrenInformation"
-        children-number="$ctrl.childrenNumber">
+        child = "$ctrl.child"
+        children-number="$ctrl.childrenInformation.length">
       </child-side-panel>
       <div class="col-sm-4">
         <label>First Name<sup>*</sup></label>
@@ -23,6 +24,7 @@
         <input type="text"
                class="form-control"
                placeholder="jane"
+               data-ng-disabled="$ctrl.child.childNameInputDisabled"
                data-ng-model="$ctrl.childFirstName"
                data-ng-required="true"/>
       </div>
@@ -30,6 +32,7 @@
         <input type="text"
                class="form-control"
                placeholder="doe"
+               data-ng-disabled="$ctrl.child.childNameInputDisabled"
                data-ng-model="$ctrl.childLastName"
                data-ng-required="true"/>
       </div>

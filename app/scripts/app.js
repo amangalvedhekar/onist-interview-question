@@ -31,7 +31,6 @@ angular
 
   })
   .config(function ($ngReduxProvider, reduxUtilsProvider, childrenQuestionRootReducerProvider) {
-
     var reduxUtils = reduxUtilsProvider.$get();
     var ReduxThunk = reduxUtils.ReduxThunk;
     var Redux = reduxUtils.Redux;

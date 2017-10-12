@@ -1,15 +1,18 @@
 <question-prompt
   children-information="$ctrl.childrenInformation"
   question="$ctrl.question"
+  children-number="1"
   update-display-child-information="$ctrl.updateDisplayChildInformation(selectedValue)">
 </question-prompt>
-<div data-ng-repeat="child in $ctrl.childrenInformation track by $index">
+<div class="child-information-container"
+     data-ng-repeat="child in $ctrl.childrenInformation track by $index">
   <child-information
     data-ng-if="child.displayChildPanel"
+    child="child"
     child-first-name="child.firstName"
+    child-name-input-enabled=""
     child-last-name="child.lastName"
     display-child-information="$ctrl.displayChildInformation"
-    children-number="child.id"
     children-information="$ctrl.childrenInformation">
   </child-information>
   <question-prompt

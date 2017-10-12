@@ -164,6 +164,8 @@ a:hover, a:focus, a:visited, a:active {
   font-size: 15px;
   font-weight: 500;
   text-align: left;
+  white-space: nowrap;
+  text-transform: capitalize;
   color: #616161;
 }
 .no-margin {
@@ -176,3 +178,8 @@ a:hover, a:focus, a:visited, a:active {
   border-radius: 0;
   -webkit-box-shadow: none;
 }
+.well-lg-inactive {
+  background: #ffffff;
+}
+
+
