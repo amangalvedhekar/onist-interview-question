@@ -5,9 +5,14 @@ version 0.16.0.
 # Getting Started
 Run below command on root folder of this project
 <ul>
-  <li>Run <code>npm install</code></li>
-  <li>Run <code>bower install</code></li>
+  <li><code>npm install</code></li>
+  <li><code>bower install</code></li>
 </ul>
+<pre>
+  Question 2 solution is inside services folder and 
+  named as sortArrayOfStrings. The Spec file for the
+  same is inside test/spec folder
+</pre>
 
 ## Build & development
 
