@@ -27,7 +27,7 @@ function childrenQuestionReducerProvider() {
           {},
           state,
           {
-            displayChildInformation: action.displayChildInformation
+            data: action.data
           }
         );
 

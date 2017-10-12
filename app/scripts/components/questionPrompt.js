@@ -34,9 +34,7 @@ var questionPromptComponent = {
   bindings: {
     childrenInformation: '<',
     question: '<',
-    childrenNumber: '<',
-    //callback to container to dispatch action to update stores
-    updateDisplayChildInformation: '&'
+    childrenNumber: '<'
   }
 };
 

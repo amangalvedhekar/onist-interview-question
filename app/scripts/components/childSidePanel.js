@@ -3,14 +3,23 @@
  */
 'use strict';
 
-function childSidePanelController(
-  $ngRedux,
-  numberToWord
-) {
+function childSidePanelController($ngRedux, numberToWord) {
   var $ctrl = this;
+  /*the onChanges life cycle hook triggers when the bindings change*/
   $ctrl.$onChanges = function (change) {
-    $ctrl.childNumberInWords = change.child.currentValue.id ?
-                               numberToWord.numberToOrdinal(change.child.currentValue.id): '';
+    //if a new child is added show the child's rank in ordinal format
+    if (change.child) {
+      $ctrl.childNumberInWords =
+        change.child.currentValue.id ?
+        numberToWord.numberToOrdinal(change.child.currentValue.id) : '';
+    }
+
+    //the panel heading is initialized as child but if we add new child the panel heading is now children
+    if(change.childrenNumber) {
+      $ctrl.panelHeading = change.childrenNumber.currentValue > 1 ? 'Children' : 'Child';
+    }
+
+
     function mapStateToCtrl(state) {
       return {
         childrenInformation: state.childrenQuestion.childrenQuestion.data
@@ -22,19 +31,21 @@ function childSidePanelController(
     )($ctrl);
   };
 
-  function removedChildStoreUpdate() {
-    //ToDo: this wont work if an element is inserted in between
-    $ctrl.childrenInformation.splice($ctrl.childrenNumber - 1, 1);
+  function removedChildStoreUpdate(childToBeRemoved) {
+    $ctrl.childrenInformation = $ctrl.childrenInformation.filter(function (child) {
+      return child !== childToBeRemoved;
+    });
+
     return {
       type: 'clearChildInformation',
       data: $ctrl.childrenInformation
     };
   }
 
-  $ctrl.removeChildInformation = function () {
+  $ctrl.removeChildInformation = function (child) {
     $ngRedux
       .dispatch(
-        removedChildStoreUpdate()
+        removedChildStoreUpdate(child)
       );
 
   };
@@ -46,7 +57,6 @@ var childSidePanelComponent = {
   controller: 'childSidePanelController',
   bindings: {
     child: '<',
-    childrenInformation: '<',
     childrenNumber: '<'
   }
 };

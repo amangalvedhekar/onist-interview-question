@@ -1,13 +1,13 @@
 <div class="col-sm-4">
 <span class="module-title text-uppercase"
-      data-ng-if="$ctrl.childrenNumber === 1">
-  Children
+      data-ng-if="$ctrl.child.id <= 1">
+  {{ $ctrl.panelHeading }}
 </span>
   <!--Show remove when child array length is greater than one-->
   <span class="section-title pull-right">{{ $ctrl.childNumberInWords}} </span><br/>
   <a class="hover-effect pull-right"
      data-ng-if="$ctrl.childrenNumber > 1"
-     data-ng-click="$ctrl.removeChildInformation()">
+     data-ng-click="$ctrl.removeChildInformation($ctrl.child)">
     Remove
   </a>
 </div>

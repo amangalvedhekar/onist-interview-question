@@ -51,8 +51,6 @@ function childInformationController(
     }
   };
 
-
-
   $ctrl.$onInit = function () {
     $ctrl.displayErrorMessage = false;
     $ctrl.isSubmitEnabled = true;
@@ -68,7 +66,6 @@ var childInformationComponent = {
     childFirstName: '<',
     childLastName: '<',
     displayChildInformation: '<',
-    childrenNumber: '<',
     childrenInformation: '<'
   }
 };
