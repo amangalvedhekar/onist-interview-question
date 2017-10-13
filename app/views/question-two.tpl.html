@@ -1,0 +1,16 @@
+<span>
+  Test Array
+</span>
+<pre>
+  {{ $ctrl.arrayWithValues | json }}
+</pre>
+<button class="btn btn-primary pull-right"
+        data-ng-click="$ctrl.sort();"
+        data-ng-disabled="$ctrl.disableSortBtn">
+  Sort
+</button>
+<button class="btn btn-danger"
+        data-ng-click="$ctrl.reset();"
+        data-ng-disabled="!$ctrl.disableSortBtn">
+  Clear
+</button>

@@ -26,10 +26,15 @@
   <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand">
+        <a class="navbar-brand" data-ui-sref="home">
           onistInterviewQuestion
         </a>
       </div>
+      <ul class="navbar-nav nav">
+        <li>
+          <a data-ui-sref="questionTwo">Question Two</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -71,15 +76,15 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/about.js"></script>
 <!-- endbuild -->
 <script src="scripts/containers/questionPromptContainer.js"></script>
 <script src="scripts/components/questionPrompt.js"></script>
+<script src="scripts/components/questionTwo.js"></script>
 <script src="scripts/components/childInformation.js"></script>
 <script src="scripts/components/childSidePanel.js"></script>
 <script src="scripts/reducers/childrenQuestionReducer.js"></script>
 <script src="scripts/reducers/index.js"></script>
 <script src="scripts/services/numberToWord.js"></script>
+<script src="scripts/services/sortArrayOfStrings.js"></script>
 </body>
 </html>

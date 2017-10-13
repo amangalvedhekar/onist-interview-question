@@ -27,6 +27,11 @@ angular
         name:'home',
         url: '',
         template: '<question-prompt-container></question-prompt-container>'
+      })
+      .state('questionTwo', {
+        name: 'questionTwo',
+        url: '/question-two',
+        template: '<question-two></question-two>'
       });
 
   })
