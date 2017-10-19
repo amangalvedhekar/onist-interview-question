@@ -7,24 +7,24 @@
        data-ng-if="$ctrl.displayErrorMessage">
       Please enter both first and last name
     </p>
-
-    <child-side-panel
-      child="$ctrl.child"
-      children-number="$ctrl.childrenInformation.length">
-    </child-side-panel>
     <div class="row">
-      <div class="col-sm-2 col-sm-offset-4">
-        <label class="child-form-label">
+      <child-side-panel
+        child="$ctrl.child"
+        children-number="$ctrl.childrenInformation.length">
+      </child-side-panel>
+      <!--<div class="row">-->
+      <div class="col-sm-2">
+        <label class="child-form-label top-margin">
           First Name<sup>*</sup>
         </label>
       </div>
       <div class="col-sm-2 col-sm-offset-2">
-        <label class="child-form-label">
+        <label class="child-form-label top-margin">
           Last Name<sup>*</sup>
         </label>
       </div>
+      <!--</div>-->
     </div>
-
 
     <div class="row bottom-spacing">
       <div class="col-sm-4 col-sm-offset-4">

@@ -170,6 +170,9 @@ a:hover, a:focus, a:visited, a:active {
 }
 .no-margin {
   margin: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 .no-border {
   border: 0;
@@ -192,8 +195,13 @@ a:hover, a:focus, a:visited, a:active {
   font-weight: 300;
   color: #616161;
 }
-
-.module-divider-vertical {
-  border-right: solid 1px #eeeeee;
+.top-margin {
+  margin-top:2em;
 }
-
+.module-divider-vertical {
+  border-left: solid 1px #eeeeee;
+  height:100%;
+}
+.remove-label {
+  margin-left: 2.1em;
+}

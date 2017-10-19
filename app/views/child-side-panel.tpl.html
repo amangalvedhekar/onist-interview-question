@@ -1,18 +1,17 @@
-<div class="row">
-  <div class="col-sm-4">
-    <p class="module-title text-uppercase"
-       data-ng-if="$ctrl.child.id <= 1">
-      {{ $ctrl.panelHeading }}
-    </p>
-    <!--<span class="module-divider-vertical"></span>-->
-
-    <!--Show remove when child array length is greater than one-->
-    <span class="section-title pull-right">{{ $ctrl.childNumberInWords}} </span><br/>
-    <a class="hover-effect pull-right"
-       data-ng-if="$ctrl.childrenNumber > 2 && $ctrl.child.displayNextQuestion"
-       data-ng-click="$ctrl.removeChildInformation($ctrl.child)">
-      Remove
-    </a>
-  </div>
-
+<div class="col-sm-1">
+  <p class="module-title text-uppercase"
+     data-ng-if="$ctrl.child.id <= 1">
+    {{ $ctrl.panelHeading }}
+  </p>
 </div>
+<div class="col-sm-3">
+  <!--Show remove when child array length is greater than one-->
+  <span class="section-title pull-right  top-margin">{{ $ctrl.childNumberInWords}} </span>
+  <a class="hover-effect pull-right remove-label"
+     data-ng-if="$ctrl.childrenNumber > 2 && $ctrl.child.displayNextQuestion"
+     data-ng-click="$ctrl.removeChildInformation($ctrl.child)">
+    Remove
+  </a>
+</div>
+
+
