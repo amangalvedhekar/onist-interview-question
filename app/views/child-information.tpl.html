@@ -1,5 +1,5 @@
-<div class="well well-lg no-margin no-border"
-     data-ng-class="($ctrl.isSubmitEnabled)? 'well-lg': 'well-lg-inactive'">
+<div class="well well-lg no-margin"
+     data-ng-class="($ctrl.isSubmitEnabled)? 'well-lg': 'well-lg-inactive no-border'">
   <form novalidate
         autocomplete="off"
         data-ng-submit="$ctrl.addChildInformation()">
@@ -7,18 +7,25 @@
        data-ng-if="$ctrl.displayErrorMessage">
       Please enter both first and last name
     </p>
+
+    <child-side-panel
+      child="$ctrl.child"
+      children-number="$ctrl.childrenInformation.length">
+    </child-side-panel>
     <div class="row">
-      <child-side-panel
-        child = "$ctrl.child"
-        children-number="$ctrl.childrenInformation.length">
-      </child-side-panel>
-      <div class="col-sm-4">
-        <label>First Name<sup>*</sup></label>
+      <div class="col-sm-2 col-sm-offset-4">
+        <label class="child-form-label">
+          First Name<sup>*</sup>
+        </label>
       </div>
-      <div class="col-sm-4">
-        <label>Last Name<sup>*</sup></label>
+      <div class="col-sm-2 col-sm-offset-2">
+        <label class="child-form-label">
+          Last Name<sup>*</sup>
+        </label>
       </div>
     </div>
+
+
     <div class="row bottom-spacing">
       <div class="col-sm-4 col-sm-offset-4">
         <input type="text"

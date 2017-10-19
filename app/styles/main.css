@@ -182,4 +182,18 @@ a:hover, a:focus, a:visited, a:active {
   background: #ffffff;
 }
 
+.btn-default {
+  background-color: #e0e0e0;
+}
+
+.child-form-label {
+  font-family: ProximaNova;
+  font-size: 13px;
+  font-weight: 300;
+  color: #616161;
+}
+
+.module-divider-vertical {
+  border-right: solid 1px #eeeeee;
+}
 
