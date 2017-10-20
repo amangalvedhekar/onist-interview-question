@@ -45,4 +45,5 @@ describe('numberToWords: service', function () {
   it('should convert 11 as ordinal', function () {
     expect(numberToWords.numberToOrdinal(11)).toMatch('eleventh child');
   });
+
 });

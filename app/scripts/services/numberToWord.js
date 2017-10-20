@@ -53,19 +53,15 @@ function numberToWord() {
     var digits = [];
     digits = getDigitsFromNumber(number).reverse();
     digitArray = [];
-    // var arrayLength = digits.length;
+
     if(number <= 20){
       return ordinals[number] + child;
     }else if(number % 10 === 0) {
+      //30===>thirtieth
       return tens[digits[0]].replace('y', 'ieth') + child;
     }else {
       return tens[digits[0]] + ordinals[digits[1]] + child;
     }
-
-    // return {
-    //   1: ordinals[digits[0]] + child,
-    //   2: tens[digits[0]] + ordinals[digits[1]] + child
-    // }[arrayLength];
   }
 
   return {
