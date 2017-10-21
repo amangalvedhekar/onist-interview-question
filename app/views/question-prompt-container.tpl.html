@@ -9,9 +9,8 @@
   <child-information
     data-ng-if="child.displayChildPanel"
     child="child"
-    child-first-name="child.firstName"
-    child-name-input-enabled=""
-    child-last-name="child.lastName"
+    child-index="$index"
+    child-panel-class="$ctrl.childInformationPanelClass($index)"
     display-child-information="$ctrl.displayChildInformation"
     children-information="$ctrl.childrenInformation">
   </child-information>

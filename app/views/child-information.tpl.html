@@ -1,5 +1,5 @@
-<div class="well well-lg no-margin no-border"
-     data-ng-class="($ctrl.isSubmitEnabled)? 'well-lg': 'well-lg-inactive'">
+<div class="well well-lg no-margin"
+     data-ng-class="($ctrl.isSubmitEnabled)? 'well-lg': $ctrl.childPanelClass+' well-lg-inactive no-border'">
   <form novalidate
         autocomplete="off"
         data-ng-submit="$ctrl.addChildInformation()">
@@ -9,15 +9,21 @@
     </p>
     <div class="row">
       <child-side-panel
-        child = "$ctrl.child"
+        child="$ctrl.child"
         children-number="$ctrl.childrenInformation.length">
       </child-side-panel>
-      <div class="col-sm-4">
-        <label>First Name<sup>*</sup></label>
+      <!--<div class="row">-->
+      <div class="col-sm-2">
+        <label class="child-form-label text-label">
+          First Name<sup>*</sup>
+        </label>
       </div>
-      <div class="col-sm-4">
-        <label>Last Name<sup>*</sup></label>
+      <div class="col-sm-2 col-sm-offset-2">
+        <label class="child-form-label text-label">
+          Last Name<sup>*</sup>
+        </label>
       </div>
+      <!--</div>-->
     </div>
     <div class="row bottom-spacing">
       <div class="col-sm-4 col-sm-offset-4">
@@ -25,7 +31,7 @@
                class="form-control"
                placeholder="jane"
                data-ng-disabled="$ctrl.child.childNameInputDisabled"
-               data-ng-model="$ctrl.childFirstName"
+               data-ng-model="$ctrl.child.firstName"
                data-ng-required="true"/>
       </div>
       <div class="col-sm-4">
@@ -33,7 +39,7 @@
                class="form-control"
                placeholder="doe"
                data-ng-disabled="$ctrl.child.childNameInputDisabled"
-               data-ng-model="$ctrl.childLastName"
+               data-ng-model="$ctrl.child.lastName"
                data-ng-required="true"/>
       </div>
     </div>
@@ -45,8 +51,7 @@
       </button>
       <button type="reset"
               data-ng-if="$ctrl.isResetEnabled"
-              class="btn btn-default btn-sm pull-right right-spacing left-padding right-padding"
-              data-ng-click="">
+              class="btn btn-default btn-sm pull-right right-spacing left-padding right-padding">
         Cancel
       </button>
     </div>

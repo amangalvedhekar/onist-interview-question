@@ -9,9 +9,12 @@ function sortArrayOfStrings() {
   /*
   * @param {number[]} arrayOfStrings
  * @return {number[]}
+ * @throws will throw an error if array element is non string
   * */
   function sortArray(arrayOfStrings) {
     var outputArray, proceed,digitArray,nonPArray,arrayWithP;
+
+    //ensure that the parameter passed is an array of strings only
     proceed = arrayOfStrings.every(function (element) {
       return typeof element === 'string';
     });
@@ -32,7 +35,6 @@ function sortArrayOfStrings() {
 
     }
     else {
-      //throw 'only strings can be the element for this array';
       throw {
         type: 'Error',
         message: 'only strings can be the element for this array'

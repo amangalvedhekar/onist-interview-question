@@ -16,7 +16,7 @@ function childInformationController(
   }
   $ctrl.addChildInformation = function () {
     var childrenIndex = $ctrl.childrenInformation.length;
-    if($ctrl.childFirstName && $ctrl.childLastName) {
+    if($ctrl.child.firstName && $ctrl.child.lastName) {
       $ctrl.displayErrorMessage = false;
       $ctrl.isSubmitEnabled = false;
       $ctrl.isResetEnabled = false;
@@ -25,8 +25,8 @@ function childInformationController(
         childInformation,
         {
           id: childrenIndex,
-          firstName: $ctrl.childFirstName,
-          lastName: $ctrl.childLastName,
+          firstName: $ctrl.child.firstName,
+          lastName: $ctrl.child.lastName,
           displayNextQuestion: true,
           displayChildPanel: true,
           childNameInputDisabled: true
@@ -63,8 +63,8 @@ var childInformationComponent = {
   controller: 'childInformationController',
   bindings: {
     child: '<',
-    childFirstName: '<',
-    childLastName: '<',
+    childIndex: '<',
+    childPanelClass: '<',
     displayChildInformation: '<',
     childrenInformation: '<'
   }
