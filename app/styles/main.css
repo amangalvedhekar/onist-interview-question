@@ -63,7 +63,7 @@
 /* onist related styling based on zeplin presentation.
  * good practice to add all the styling that goes to entire document to body
  */
-* {
+body {
   /*fall back to more generic font if a custom font happens to be missing*/
   font-family: ProximaNova;
 }
@@ -151,6 +151,7 @@ a:hover, a:focus, a:visited, a:active {
   text-transform: capitalize;
   color: #616161;
 }
+
 .no-margin {
   margin: 0;
   -webkit-border-radius: 0;
